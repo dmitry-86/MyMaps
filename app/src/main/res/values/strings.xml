@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyMaps</string>
+    <string name="title_is_empty">Название точки не должно быть пустым</string>
+    <string name="ok">Ok</string>
+    <string name="edit">Редактировать</string>
+    <string name="enter_new_title">Введите новое название точки</string>
+    <string name="cancel">Отмена</string>
+    <string name="hello">Привет!</string>
+    <string name="create_marker">Создать новую точку</string>
+    <string name="title">Название места</string>
+</resources>

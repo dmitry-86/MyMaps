@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=0D:64:9A:35:E6:9C:19:4C:0D:BE:F1:47:6C:1A:60:39:B3:CA:BC:CF%3Bcom.netology.mymaps.app
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.netology.mymaps.app
+
+    SHA-1 certificate fingerprint:
+    0D:64:9A:35:E6:9C:19:4C:0D:BE:F1:47:6C:1A:60:39:B3:CA:BC:CF
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD8a_OPnbluyxAFHvNdOkhRz3Xwn2KaKFo</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main.xml"
+    app:startDestination="@id/fragmentLocations">
+    <fragment
+        android:id="@+id/fragmentLocations"
+        android:name="com.netology.mymaps.app.FragmentLocations"
+        android:label="fragment_locations"
+        tools:layout="@layout/fragment_locations" >
+        <action
+            android:id="@+id/action_fragmentLocations_to_displayMapsFragment"
+            app:destination="@id/displayMapsFragment" />
+        <action
+            android:id="@+id/action_fragmentLocations_to_createMapFragment"
+            app:destination="@id/createMapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayMapsFragment"
+        android:name="com.netology.mymaps.app.DisplayMapsFragment"
+        android:label="fragment_display_maps"
+        tools:layout="@layout/fragment_display_maps" />
+    <fragment
+        android:id="@+id/createMapFragment"
+        android:name="com.netology.mymaps.app.CreateMapFragment"
+        android:label="fragment_create_map"
+        tools:layout="@layout/fragment_create_map" >
+        <action
+            android:id="@+id/action_createMapFragment_to_fragmentLocations"
+            app:destination="@id/fragmentLocations" />
+    </fragment>
+</navigation>
