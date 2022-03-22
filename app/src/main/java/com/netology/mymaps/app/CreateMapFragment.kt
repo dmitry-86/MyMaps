@@ -27,6 +27,7 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.maps.android.collections.MarkerManager
 import com.google.maps.android.ktx.awaitMap
+import com.google.maps.android.ktx.model.cameraPosition
 import com.google.maps.android.ktx.utils.collection.addMarker
 import com.netology.mymapapp.viewmodel.MapViewModel
 import com.netology.mymaps.R
@@ -143,14 +144,25 @@ class CreateMapFragment : Fragment() {
                 }
             }
 
-            googleMap.moveCamera(
-                CameraUpdateFactory.newLatLngBounds(
-                    boundsBuilder.build(),
-                    1000,
-                    1000,
-                    0
+            try{
+                googleMap.moveCamera(
+                    CameraUpdateFactory.newLatLngBounds(
+                        boundsBuilder.build(),
+                        1000,
+                        1000,
+                        0
+                    )
                 )
-            )
+            }catch(e: IllegalStateException){
+                val target = LatLng(56.0153, 92.8932)
+                googleMap.moveCamera(
+                    CameraUpdateFactory.newCameraPosition(
+                        cameraPosition {
+                            target(target)
+                        }
+                    )
+                )
+            }
 
             googleMap.setOnInfoWindowClickListener { markerToDelete ->
                 markers.remove(markerToDelete)

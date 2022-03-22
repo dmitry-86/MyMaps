@@ -125,14 +125,25 @@ class DisplayMapsFragment : Fragment() {
 
             if (position == null) {
                 //показать всю карту
-                googleMap.moveCamera(
-                    CameraUpdateFactory.newLatLngBounds(
-                        boundsBuilder.build(),
-                        1000,
-                        1000,
-                        0
+                try {
+                    googleMap.moveCamera(
+                        CameraUpdateFactory.newLatLngBounds(
+                            boundsBuilder.build(),
+                            1000,
+                            1000,
+                            0
+                        )
                     )
-                )
+                }catch(e: IllegalStateException){
+                    val target = LatLng(56.0153, 92.8932)
+                    googleMap.moveCamera(
+                        CameraUpdateFactory.newCameraPosition(
+                            cameraPosition {
+                                target(target)
+                            }
+                        )
+                    )
+                }
             } else {
                 viewModel.data.observe(viewLifecycleOwner) {
                     val currentTarget =
